@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/form.css">
+    <link rel="stylesheet" href="/CSS/header.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/table.css">
+</head>
+<body>
+    <div class="header">
+        <h1><%= title %></h1>
+        <p><%= content %></p>
+    </div>
+
+    <div class="details-container">
+        <form action="<%= formAction %>" method="POST">
+            <% if (error) { %>
+                <div class="error"><%= error %></div>
+            <% } %>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="<%= student ? student.name : '' %>" >
+            
+                <label for="student_no">Student Number:</label>
+                <input type="text" id="student_no" name="student_no" value="<%= student ? student.studentno : '' %>" >
+            
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="abc@gmail.com" name="email" value="<%= student ? student.email : '' %>">
+
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" placeholder="1234567890" name="phone" value="<%= student ? student.phone : '' %>" >
+
+            <div class="button-group">
+                <button type="submit" class="save-btn"><i class="fa-solid fa-save"></i> Save</button>
+
+                <a href="/students" class="back-button">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                </a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
