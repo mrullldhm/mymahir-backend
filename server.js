@@ -21,7 +21,7 @@ app.use(methodOverride("_method"));
 const cors = require("cors");
 const corsOptions = {
 //   origin: ["http://localhost:4200"],
-  origin: ["https://mymahir-405d7.web.app/"],
+  origin: ["https://mymahir-405d7.web.app"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"], // allowed request headers
