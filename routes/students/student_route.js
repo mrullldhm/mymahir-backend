@@ -57,7 +57,7 @@ router.post('/add', async (req, res) => {
 
     try{
         await database.query(
-            'INSERT INTO users (name, studentno, email, phone) VALUES (?, ?, ?, ?)',
+            'INSERT INTO users (name, student_no, email, phone) VALUES (?, ?, ?, ?)',
             [name, student_no, email, phone]
         );
 
@@ -110,7 +110,7 @@ router.put('/update/:id', async (req, res) => {
 
     try {
         await database.query(
-            'UPDATE users SET name = ?, studentno = ?, email = ?, phone = ? WHERE id = ?',
+            'UPDATE users SET name = ?, student_no = ?, email = ?, phone = ? WHERE id = ?',
             [name, student_no, email, phone, req.params.id]
         );
 
